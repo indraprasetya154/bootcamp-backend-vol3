@@ -1,7 +1,7 @@
-
 #  Docker Setup Guide
 This guide covers three cases for setting up and running various Docker configurations. Follow the instructions based on the case that applies to your setup.
 
+---
 
 ##  Case 1: Golang Docker
 This case demonstrates how to build a Golang Docker image.
@@ -29,6 +29,8 @@ docker build -t golang-docker -f .docker/Dockerfile .
 docker build -t golang-docker -f .docker/Dockerfile.multistage-distroless . --no-cache
 
 ```
+
+---
 
 ##  Case 2: Docker Compose with MinIO
 This case sets up a Docker Compose configuration with MinIO.
@@ -64,7 +66,7 @@ or
 docker compose down
 
 ```
-  
+ --- 
 
 ##  Case 3: Docker Compose with App and MySQL
 
