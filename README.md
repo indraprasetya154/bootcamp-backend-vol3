@@ -26,7 +26,7 @@ docker build -t golang-docker -f .docker/Dockerfile .
 
 ```bash
 
-docker build -t golang-docker -f .docker/Dockerfile.multistage-distroless . --no-cache
+docker build -t golang-docker -f .docker/Dockerfile.multistage-distroless .
 
 ```
 
