@@ -1,0 +1,13 @@
+FROM golang:alpine as builder
+WORKDIR /builder
+ENV GO111MODULE=on CGO_ENABLED=0
+COPY . .
+RUN apk update && apk add --no-cache upx \
+  && go build -ldflags "-extldflags '-static' -s -w" -o /builder/main /builder/main.go \
+  && upx -9 /builder/main
+
+FROM gcr.io/distroless/static-debian12
+WORKDIR /app
+COPY --from=builder /builder/main main
+
+ENTRYPOINT ["/app/main"]
